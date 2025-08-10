@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — University E‑Voting System</title>
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form class="login-container" id="loginForm" autocomplete="off">
+        <div class="login-header">Student Login</div>
+
+        <label for="studentId">Student ID / Username</label>
+        <input type="text" id="studentId" name="studentId" placeholder="Enter your ID/username" required>
+
+        <label for="password">Password</label>
+        <div class="password-row">
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+            <button type="button" class="toggle-password" id="togglePwd" tabindex="-1">Show</button>
+        </div>
+
+        <button class="login-btn" type="submit">Login</button>
+        <a class="back-link" href="index.html">&larr; Back to Home</a>
+    </form>
+
+    <script>
+        // Show/Hide password toggle
+        document.getElementById('togglePwd').addEventListener('click', function() {
+            const pwdInput = document.getElementById('password');
+            if (pwdInput.type === "password") {
+                pwdInput.type = "text";
+                this.textContent = "Hide";
+            } else {
+                pwdInput.type = "password";
+                this.textContent = "Show";
+            }
+        });
+
+        // Dummy validation logic
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studentId = document.getElementById('studentId').value.trim();
+            const password = document.getElementById('password').value;
+            if(studentId && password) {
+                // Replace this with your actual login logic (AJAX, API etc.)
+                alert("✅ Login successful! Redirecting to voting page…");
+                window.location.href = "vote.html";
+            } else {
+                alert("❗ Please fill in both fields.");
+            }
+        });
+
+        // After successful student login
+        // sessionStorage.setItem("isLoggedIn", "true"); 
+        // window.location.href = "vote.html";
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+ body {
+            background: linear-gradient(135deg, #fd79a8, #0984e3);
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .results-table {
+            width: 100%;
+            max-width: 650px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(0,0,0,0.25);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .results-table th, 
+        .results-table td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        .results-table th {
+            background: rgba(0,0,0,0.4);
+        }
+
+        .bar-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            width: 100%;
+            height: 16px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            text-align: right;
+            padding-right: 5px;
+            font-size: 0.85rem;
+            line-height: 16px;
+            color: white;
+        }
+
+        .candidate1 { background: #00cec9; }
+        .candidate2 { background: #6c5ce7; }
+        .candidate3 { background: #fdcb6e; }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 16px;
+            background: #00b894;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: #019875;
+        }

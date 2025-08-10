@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — University E‑Voting System</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <h1>Admin Dashboard</h1>
+    <p style="text-align: center;">Welcome, Admin. Here’s the current voting overview.</p>
+
+    <!-- Top stats -->
+    <div class="stats-container">
+        <div class="stat-box">
+            <div>Total Votes</div>
+            <h2 id="totalVotes">0</h2>
+        </div>
+        <div class="stat-box">
+            <div>Registered Voters</div>
+            <h2 id="registeredVoters">500</h2>
+        </div>
+        <div class="stat-box">
+            <div>Voter Turnout</div>
+            <h2 id="turnout">0%</h2>
+        </div>
+    </div>
+
+    <!-- Results table -->
+    <table class="results-table">
+        <thead>
+            <tr>
+                <th>Candidate</th>
+                <th>Votes</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody id="resultsBody">
+            <!-- Filled via JS -->
+        </tbody>
+    </table>
+
+    <!-- Action buttons -->
+    <div class="actions">
+        <a href="candidates.html" class="admin-btn">Manage Candidates</a>
+        <a href="#" class="admin-btn">View Voter List</a>
+        <a href="index.html" class="admin-btn">Logout</a>
+    </div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+<script>
+    authenticateAdmin();
+    renderAdminDashboard();
+</script>
+
+
+</body>
+</html>

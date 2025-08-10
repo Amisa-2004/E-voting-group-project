@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote - University E‑Voting System</title>
+    <link rel="stylesheet" href="css/vote.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Cast Your Vote</h1>
+    <p>Select your preferred candidate and submit your vote.</p>
+
+    <form id="voteForm">
+        <div class="candidates">
+            <!-- Candidate 1 -->
+            <label class="candidate">
+                <img src="images/candidate1.jpg" alt="Candidate 1">
+                <h3>Candidate 1</h3>
+                <input type="radio" name="candidate" value="Candidate 1" required>
+            </label>
+
+            <!-- Candidate 2 -->
+            <label class="candidate">
+                <img src="images/candidate2.jpg" alt="Candidate 2">
+                <h3>Candidate 2</h3>
+                <input type="radio" name="candidate" value="Candidate 2" required>
+            </label>
+
+            <!-- Candidate 3 -->
+            <label class="candidate">
+                <img src="images/candidate3.jpg" alt="Candidate 3">
+                <h3>Candidate 3</h3>
+                <input type="radio" name="candidate" value="Candidate 3" required>
+            </label>
+        </div>
+
+        <button type="submit" class="vote-btn">Submit Vote</button>
+    </form>
+
+<script>
+    // Render voting dashboard on vote.html
+    document.getElementById("voteForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Stop actual form submit for now
+            const selected = document.querySelector('input[name="candidate"]:checked');
+            if (selected) {
+                alert(`✅ Your vote for "${selected.value}" has been submitted successfully.`);
+                // Here, you would send the vote data to the backend using fetch or AJAX
+                window.location.href = "results.html"; // Redirect to results page
+            }
+        });
+
+        if (sessionStorage.getItem("isLoggedIn") !== "true") {
+        alert("You must log in before voting!");
+        window.location.href = "login.html";
+    }
+</script>
+
+</body>
+</html>
